@@ -1,0 +1,87 @@
+html{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+}
+
+body{
+    margin: 0 ;
+    flex-wrap: wrap;
+
+    font-family: "Open Sans",sans-serif;
+    color: #11161a;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8 linear;
+    height: 80px;
+    flex-wrap: wrap ;
+    box-shadow: 0px 5px 15px 0px rgb(235, 233, 235);
+    background-color: white;
+    margin: 0px;
+}
+
+.mainButtons{
+    border: 1px solid;
+    display: flex;
+    max-width: 620px;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    
+}
+
+#signup{
+    border: none;
+    width: 50%;
+    background-color: #f9f9fa;
+}
+#signin{
+    border: none;
+    width: 50%;
+    background-color: #f9f9fa;
+}
+
+section{
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #c8cdd2;
+    background: #fff;
+    
+    box-shadow: 2px 2px 3px 0 rgb(117 124 129 / 12%);
+    max-width: 620px;
+    text-align: center;
+
+    padding: 0px 60px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+section h2 {
+    margin-top: 35px;
+    border: 1px solid;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 200;
+    line-height: 4rem;
+}
+
+
+div{
+    border: 1px solid;
+}

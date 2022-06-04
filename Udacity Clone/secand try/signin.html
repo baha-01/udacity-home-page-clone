@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="shortcut icon" type="image/x-icon" href="logoUdac.PNG"/>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In -Udacity</title>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+    function get_action(form) 
+    {
+        var v = grecaptcha.getResponse();
+        if(v.length == 0)
+        {
+            document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+            return false;
+        }
+        else
+        {
+            document.getElementById('captcha').innerHTML="Captcha completed";
+            return true; 
+        }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="headerimg"><img id="imgUdacity" src="signTitle.PNG"></a>
+    </header>
+
+
+    <div class="mainButtons">
+        <button id="signup">SIGN UP</button>
+        <button id="signin">SIGN IN</button>
+    </div>
+
+    <section style="border: 1px solid;" class="signUP">
+        <h2>Create your account</h2>
+        <p>Build skills for today, tomorrow, and beyond.<br>Education to future-proof your career.</p>
+        <div class="signUpWith">
+            <div class="withGoogle">
+                <img id="googleLogo" src="google.png" alt="google">
+                <p>Sign up with Google</p>
+            </div>
+            <div class="withFacebook">
+                <img id="facebookLogo" src="facebook.png" alt="facebook">
+                <p>Sign up with Facebook</p>
+            </div>
+        </div>
+        
+        <fieldset>
+            <legend>or</legend>
+            <form name="signUpForm" action="signup.php" method="post">
+                <input type="text" name="firstname" placeholder="First Name" required>
+                <input type="text" name="lastname" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" onkeyup="isGood(this.value)" required>
+                <i id="togglePassword"></i>
+                <br>
+                <small class="help-block" id="password-text"></small>
+
+                <div class="messages">
+                    <ul>
+                    
+                    </ul>
+                    <p></p>
+                </div>
+
+                <p>By clicking Sign Up, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a> .</p>
+                
+                <input type="submit" name="submitUp" value="SIGN UP" class="submitBtn">
+
+            </form>
+        </fieldset>
+    </section>
+
+    <section style="border: 1px solid;" class="signIN">
+        <h2>Sign in to your account</h2>
+        <p>Build skills for today, tomorrow, and beyond. Education to future-proof your career.</p>
+        <div class="messageIn">
+            <p></p>
+        </div>
+        <div class="signUpWith">
+            <div class="withGoogle">
+                <img class="googleLogo" src="google.png" alt="google">
+                <p>Sign in with Google</p>
+            </div>
+            <div class="withFacebook">
+                <img class="facebookLogo" src="facebook.png" alt="facebook">
+                <p>Sign in with Facebook</p>
+            </div>
+        </div>
+
+        <fieldset>
+            <legend>or</legend>
+            <form action="signin.php" method="post" name="signInForm">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" onkeyup="isGood(this.value)" required>
+                <i id="togglePassword"></i>
+
+                <p>By clicking Sign Up, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a> .</p>
+
+                <div class="g-recaptcha" id="rcaptcha"  data-sitekey="site key"></div>
+                <span id="captcha" style="color:red" ></span> <!-- this will show captcha errors -->
+
+                <input type="submit" name="submitIn" value="SIGN IN" class="submitBtn">
+            </form>
+            <a href="#">Forgot your password?</a>
+        </fieldset>
+
+        <fieldset>
+            <legend>or</legend>
+            <a href="#">Sign in with your organization</a>
+        </fieldset>
+    </section>
+    
+</body>
+</html>
